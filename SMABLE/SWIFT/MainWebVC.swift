@@ -10,7 +10,6 @@ import Alamofire
 import MediaPlayer
 
 class MainWebVC: UIViewController,WKUIDelegate, WKNavigationDelegate, WKScriptMessageHandler, XMLParserDelegate, MFMessageComposeViewControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, NaverThirdPartyLoginConnectionDelegate, SmaCoreBlueToolDelegate, BLConnectDelegate, ALInterstitialAdDelegate {
-
     
     static var getSystemVolumSliderVolumeViewSlider: UISlider? = nil
     
