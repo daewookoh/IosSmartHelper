@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SMASecondSeriesCoachViewController">
+            <connections>
+                <outlet property="alarmSetBut" destination="s3n-2l-k0T" id="SIy-LJ-DGc"/>
+                <outlet property="backlightBut" destination="RYM-eU-YXP" id="Jbd-da-KDP"/>
+                <outlet property="beaconBut" destination="s71-fp-9De" id="DlP-Rt-Cbb"/>
+                <outlet property="cleanBut" destination="2j6-d8-0Gv" id="fQO-3b-haw"/>
+                <outlet property="getAlarmBut" destination="Hrl-EW-sUN" id="02z-Yb-KHv"/>
+                <outlet property="getHRBut" destination="hZE-eN-hwL" id="uex-2y-JpX"/>
+                <outlet property="getSleepBut" destination="DPb-cT-0Ux" id="noL-G1-Btm"/>
+                <outlet property="getSportBut" destination="FjB-w2-9SG" id="yje-FO-j9z"/>
+                <outlet property="hrSetBut" destination="jlr-90-xET" id="UVT-jg-byR"/>
+                <outlet property="languageBut" destination="7Ir-Ui-uJH" id="xs6-Ji-xom"/>
+                <outlet property="logTextView" destination="qZ3-y8-TWF" id="Nes-kX-YpD"/>
+                <outlet property="macBut" destination="2Tc-Jj-WOu" id="pAZ-p8-AyH"/>
+                <outlet property="muteBut" destination="AbC-hS-p0I" id="Iyc-lg-FMi"/>
+                <outlet property="sedentBut" destination="Imy-SP-DGA" id="LML-3c-9qz"/>
+                <outlet property="vibratBut" destination="87p-ur-etB" id="Qp7-hy-eFy"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="watchfaceBut" destination="bx8-fx-O5J" id="VYN-Nx-1sN"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s3n-2l-k0T">
+                    <rect key="frame" x="4" y="70" width="183.5" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="PTd-yf-qsq"/>
+                    </constraints>
+                    <state key="normal" title="Alarm setting"/>
+                    <connections>
+                        <action selector="alarmSetSelector:" destination="-1" eventType="touchUpInside" id="r3j-bE-Ez9"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hrl-EW-sUN">
+                    <rect key="frame" x="197.5" y="70" width="179.5" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="pJO-35-W94"/>
+                    </constraints>
+                    <state key="normal" title="Get an alarm"/>
+                    <connections>
+                        <action selector="getAlarmSelector:" destination="-1" eventType="touchUpInside" id="EDA-3e-yo3"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Imy-SP-DGA">
+                    <rect key="frame" x="4" y="108" width="183.5" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="uLx-Na-rVA"/>
+                    </constraints>
+                    <state key="normal" title="Sedentary setting"/>
+                    <connections>
+                        <action selector="sedentarySelector:" destination="-1" eventType="touchUpInside" id="eNN-Xg-U77"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jlr-90-xET">
+                    <rect key="frame" x="197.5" y="108" width="177.5" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="izi-6g-Jrh"/>
+                    </constraints>
+                    <state key="normal" title="Heart rate setting"/>
+                    <connections>
+                        <action selector="HRselector:" destination="-1" eventType="touchUpInside" id="ev5-ki-uLb"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AbC-hS-p0I">
+                    <rect key="frame" x="4" y="146" width="183.5" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="dM6-Hl-rWO"/>
+                    </constraints>
+                    <state key="normal" title="Do not disturb settings"/>
+                    <connections>
+                        <action selector="noDisSelector:" destination="-1" eventType="touchUpInside" id="NMs-wI-rWL"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="87p-ur-etB">
+                    <rect key="frame" x="197.5" y="146" width="179.5" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="nFM-Ys-hFV"/>
+                    </constraints>
+                    <state key="normal" title="Vibration setting"/>
+                    <connections>
+                        <action selector="vibrationSelector:" destination="-1" eventType="touchUpInside" id="cWA-hY-vmQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FjB-w2-9SG">
+                    <rect key="frame" x="4" y="184" width="121" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="nMJ-mu-ygH"/>
+                    </constraints>
+                    <state key="normal" title="Sports data"/>
+                    <connections>
+                        <action selector="sportSelector:" destination="-1" eventType="touchUpInside" id="Xqg-of-kpJ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DPb-cT-0Ux">
+                    <rect key="frame" x="135" y="184" width="115" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="x65-1W-IiU"/>
+                    </constraints>
+                    <state key="normal" title="Sleep data"/>
+                    <connections>
+                        <action selector="sleepSelector:" destination="-1" eventType="touchUpInside" id="b0K-MG-PPD"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hZE-eN-hwL">
+                    <rect key="frame" x="260" y="184" width="115" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="hKt-WC-3QI"/>
+                    </constraints>
+                    <state key="normal" title="Heart rate data"/>
+                    <connections>
+                        <action selector="heartSelector:" destination="-1" eventType="touchUpInside" id="p44-E2-2Re"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s71-fp-9De">
+                    <rect key="frame" x="4" y="222" width="193" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="R8X-NP-IjI"/>
+                    </constraints>
+                    <state key="normal" title="BEACON broadcast settings"/>
+                    <connections>
+                        <action selector="beaconSelector:" destination="-1" eventType="touchUpInside" id="4B3-ns-oQP"/>
+                    </connections>
+                </button>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qZ3-y8-TWF">
+                    <rect key="frame" x="0.0" y="306" width="375" height="361"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2j6-d8-0Gv">
+                    <rect key="frame" x="313" y="617" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="46" id="70J-qu-veU"/>
+                        <constraint firstAttribute="height" constant="30" id="GZe-U1-2qr"/>
+                    </constraints>
+                    <state key="normal" title="clean"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RYM-eU-YXP">
+                    <rect key="frame" x="195.5" y="222" width="177.5" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="eNe-rS-IdZ"/>
+                    </constraints>
+                    <state key="normal" title="Backlight setting"/>
+                    <connections>
+                        <action selector="backLightselector:" destination="-1" eventType="touchUpInside" id="bIt-hy-lzO"/>
+                        <action selector="cleanScreen" destination="-1" eventType="touchUpInside" id="Egw-zK-5u7"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Ir-Ui-uJH">
+                    <rect key="frame" x="4" y="260" width="121" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="RP8-dv-JbS"/>
+                    </constraints>
+                    <state key="normal" title="language setting"/>
+                    <connections>
+                        <action selector="setLanguageSelector:" destination="-1" eventType="touchUpInside" id="tPS-dF-7u4"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tc-Jj-WOu">
+                    <rect key="frame" x="135" y="260" width="115" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Src-k8-xBS"/>
+                    </constraints>
+                    <state key="normal" title="Get mac addr"/>
+                    <connections>
+                        <action selector="getMACselector:" destination="-1" eventType="touchUpInside" id="lLM-Um-bBC"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bx8-fx-O5J">
+                    <rect key="frame" x="260" y="260" width="115" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="Csh-IM-TzR"/>
+                    </constraints>
+                    <state key="normal" title="Dial number"/>
+                    <connections>
+                        <action selector="watchfaceNumSelector:" destination="-1" eventType="touchUpInside" id="XRB-ox-iwc"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Iam-vQ-KmM">
+                    <rect key="frame" x="190" y="561" width="169" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="69" id="cRu-ca-OUt"/>
+                        <constraint firstAttribute="height" constant="40" id="jYH-dR-x0J"/>
+                    </constraints>
+                    <state key="normal" title="Processing data of sleep"/>
+                    <connections>
+                        <action selector="processingDataOfSleep:" destination="-1" eventType="touchUpInside" id="b7L-Ta-5LQ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kYT-yY-4sN">
+                    <rect key="frame" x="14" y="318" width="130" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Set local time zone"/>
+                    <connections>
+                        <action selector="setTimeZone:" destination="-1" eventType="touchUpInside" id="3TF-zg-GnV"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j5d-Gk-pt5">
+                    <rect key="frame" x="33" y="372" width="225" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="Set latitude and longitude"/>
+                    <connections>
+                        <action selector="setLatitudeLongitude:" destination="-1" eventType="touchUpInside" id="DIT-Rv-07q"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nMC-zk-vpA">
+                    <rect key="frame" x="190" y="318" width="94" height="30"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <state key="normal" title="AGPS Update"/>
+                    <connections>
+                        <action selector="AGPSSUpdateSelector:" destination="-1" eventType="touchUpInside" id="m94-be-Yrs"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="FjB-w2-9SG" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="4" id="0eK-xo-LGa"/>
+                <constraint firstItem="DPb-cT-0Ux" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/3" constant="-10" id="1ZS-JI-kNf"/>
+                <constraint firstItem="bx8-fx-O5J" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/3" constant="-10" id="27c-LE-xu1"/>
+                <constraint firstItem="hZE-eN-hwL" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/3" constant="-10" id="2rq-Dd-DgR"/>
+                <constraint firstItem="2Tc-Jj-WOu" firstAttribute="leading" secondItem="7Ir-Ui-uJH" secondAttribute="trailing" constant="10" id="3By-te-Cfz"/>
+                <constraint firstAttribute="trailing" secondItem="Iam-vQ-KmM" secondAttribute="trailing" constant="16" id="3Ha-1R-OUt"/>
+                <constraint firstItem="7Ir-Ui-uJH" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/3" constant="-4" id="5ne-LG-9sx"/>
+                <constraint firstAttribute="trailing" secondItem="qZ3-y8-TWF" secondAttribute="trailing" id="6nH-oH-xgJ"/>
+                <constraint firstItem="7Ir-Ui-uJH" firstAttribute="top" secondItem="s71-fp-9De" secondAttribute="bottom" constant="8" id="7Cc-LT-ez6"/>
+                <constraint firstItem="Imy-SP-DGA" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="4" id="7qd-vz-Ot7"/>
+                <constraint firstItem="2Tc-Jj-WOu" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/3" constant="-10" id="923-Hq-6xk"/>
+                <constraint firstItem="AbC-hS-p0I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="4" id="9dn-cb-aP4"/>
+                <constraint firstItem="RYM-eU-YXP" firstAttribute="centerY" secondItem="s71-fp-9De" secondAttribute="centerY" id="Cv4-Zp-23d"/>
+                <constraint firstItem="DPb-cT-0Ux" firstAttribute="leading" secondItem="FjB-w2-9SG" secondAttribute="trailing" constant="10" id="DCU-At-thD"/>
+                <constraint firstItem="Imy-SP-DGA" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/2" constant="-4" id="DX2-CB-cAW"/>
+                <constraint firstItem="s71-fp-9De" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/2" constant="-4" id="Eon-eQ-jSk"/>
+                <constraint firstItem="s3n-2l-k0T" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="70" id="HZ9-wa-oai"/>
+                <constraint firstItem="qZ3-y8-TWF" firstAttribute="top" secondItem="bx8-fx-O5J" secondAttribute="bottom" constant="16" id="IA5-a7-a0D"/>
+                <constraint firstItem="RYM-eU-YXP" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/2" constant="-10" id="J4Y-fF-JiQ"/>
+                <constraint firstItem="2Tc-Jj-WOu" firstAttribute="centerY" secondItem="7Ir-Ui-uJH" secondAttribute="centerY" id="Jf1-li-Oub"/>
+                <constraint firstItem="AbC-hS-p0I" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/2" constant="-4" id="MUo-x3-rUx"/>
+                <constraint firstAttribute="bottom" secondItem="qZ3-y8-TWF" secondAttribute="bottom" id="NJ3-9z-9zH"/>
+                <constraint firstItem="Hrl-EW-sUN" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/2" constant="-8" id="NtO-7v-mtV"/>
+                <constraint firstItem="RYM-eU-YXP" firstAttribute="leading" secondItem="s71-fp-9De" secondAttribute="trailing" constant="8" id="R4J-02-ect"/>
+                <constraint firstItem="87p-ur-etB" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/2" constant="-8" id="RkY-rt-Nvm"/>
+                <constraint firstItem="bx8-fx-O5J" firstAttribute="leading" secondItem="2Tc-Jj-WOu" secondAttribute="trailing" constant="10" id="SYD-tQ-T8T"/>
+                <constraint firstItem="FjB-w2-9SG" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/3" constant="-4" id="So6-Tq-K6D"/>
+                <constraint firstItem="bx8-fx-O5J" firstAttribute="centerY" secondItem="7Ir-Ui-uJH" secondAttribute="centerY" id="TFr-MD-mKd"/>
+                <constraint firstAttribute="trailing" secondItem="2j6-d8-0Gv" secondAttribute="trailing" constant="16" id="U92-Ko-L3a"/>
+                <constraint firstItem="s71-fp-9De" firstAttribute="top" secondItem="DPb-cT-0Ux" secondAttribute="bottom" constant="8" id="Wdd-Ub-9gq"/>
+                <constraint firstItem="qZ3-y8-TWF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="YKL-rW-iFd"/>
+                <constraint firstItem="2j6-d8-0Gv" firstAttribute="top" secondItem="Iam-vQ-KmM" secondAttribute="bottom" constant="16" id="Yc0-Yt-q7c"/>
+                <constraint firstItem="hZE-eN-hwL" firstAttribute="leading" secondItem="DPb-cT-0Ux" secondAttribute="trailing" constant="10" id="bzE-LJ-BLG"/>
+                <constraint firstItem="s3n-2l-k0T" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/2" constant="-4" id="eec-jk-7CW"/>
+                <constraint firstItem="jlr-90-xET" firstAttribute="centerY" secondItem="Imy-SP-DGA" secondAttribute="centerY" id="hGy-OD-cWh"/>
+                <constraint firstItem="7Ir-Ui-uJH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="4" id="iFh-42-CWw"/>
+                <constraint firstItem="s3n-2l-k0T" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="4" id="kqx-lY-RS7"/>
+                <constraint firstItem="Hrl-EW-sUN" firstAttribute="leading" secondItem="s3n-2l-k0T" secondAttribute="trailing" constant="10" id="lDy-qA-YNS"/>
+                <constraint firstItem="87p-ur-etB" firstAttribute="leading" secondItem="AbC-hS-p0I" secondAttribute="trailing" constant="10" id="nxT-PN-wVD"/>
+                <constraint firstItem="jlr-90-xET" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1/2" constant="-10" id="oA6-cw-CiZ"/>
+                <constraint firstItem="Hrl-EW-sUN" firstAttribute="centerY" secondItem="s3n-2l-k0T" secondAttribute="centerY" id="odV-xI-bjZ"/>
+                <constraint firstItem="hZE-eN-hwL" firstAttribute="centerY" secondItem="FjB-w2-9SG" secondAttribute="centerY" id="py3-v3-fKW"/>
+                <constraint firstItem="AbC-hS-p0I" firstAttribute="top" secondItem="Imy-SP-DGA" secondAttribute="bottom" constant="8" id="q0a-MR-IYB"/>
+                <constraint firstItem="Imy-SP-DGA" firstAttribute="top" secondItem="s3n-2l-k0T" secondAttribute="bottom" constant="8" id="rds-gR-hG0"/>
+                <constraint firstItem="87p-ur-etB" firstAttribute="centerY" secondItem="AbC-hS-p0I" secondAttribute="centerY" id="sdC-VP-akB"/>
+                <constraint firstItem="jlr-90-xET" firstAttribute="leading" secondItem="Imy-SP-DGA" secondAttribute="trailing" constant="10" id="tbi-yU-Eh3"/>
+                <constraint firstItem="s71-fp-9De" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="4" id="uj7-gy-qGS"/>
+                <constraint firstItem="DPb-cT-0Ux" firstAttribute="centerY" secondItem="FjB-w2-9SG" secondAttribute="centerY" id="vr7-fm-EX0"/>
+                <constraint firstAttribute="bottom" secondItem="2j6-d8-0Gv" secondAttribute="bottom" constant="20" id="y6l-l9-z1v"/>
+                <constraint firstItem="FjB-w2-9SG" firstAttribute="top" secondItem="AbC-hS-p0I" secondAttribute="bottom" constant="8" id="zSD-7s-9S2"/>
+            </constraints>
+            <point key="canvasLocation" x="50.399999999999999" y="58.920539730134934"/>
+        </view>
+    </objects>
+</document>

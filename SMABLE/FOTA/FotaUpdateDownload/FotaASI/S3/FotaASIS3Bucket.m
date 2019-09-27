@@ -1,0 +1,40 @@
+//
+//  ASIS3Bucket.m
+//  Part of ASIHTTPRequest -> http://allseeing-i.com/ASIHTTPRequest
+//
+//  Created by Ben Copsey on 16/03/2010.
+//  Copyright 2010 All-Seeing Interactive. All rights reserved.
+//
+
+#import "FotaASIS3Bucket.h"
+
+
+@implementation FotaASIS3Bucket
+
++ (id)bucketWithOwnerID:(NSString *)anOwnerID ownerName:(NSString *)anOwnerName
+{
+	FotaASIS3Bucket *bucket = [[[self alloc] init] autorelease];
+	[bucket setOwnerID:anOwnerID];
+	[bucket setOwnerName:anOwnerName];
+	return bucket;
+}
+
+- (void)dealloc
+{
+	[name release];
+	[creationDate release];
+	[ownerID release];
+	[ownerName release];
+	[super dealloc];
+}
+
+- (NSString *)description
+{
+	return [NSString stringWithFormat:@"Name: %@ creationDate: %@ ownerID: %@ ownerName: %@",[self name],[self creationDate],[self ownerID],[self ownerName]];
+}
+
+@synthesize name;
+@synthesize creationDate;
+@synthesize ownerID;
+@synthesize ownerName;
+@end
