@@ -303,9 +303,8 @@ unsigned short crc16_ccitt(Byte *buf, int len)
  */
 +(BOOL)checkNckBytes:(Byte [])bytes
 {
-    if(bytes[1]==0x10 && bytes[0]==0xAB)
+    if(bytes[1] == 0x10 && bytes[0] == 0xAB)
     {
-
         return false;//应答信号
     }else
     {

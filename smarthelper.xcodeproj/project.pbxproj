@@ -1258,6 +1258,7 @@
 				CODE_SIGN_ENTITLEMENTS = smarthelper.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3KG66MUG6F;
 				ENABLE_BITCODE = NO;
@@ -1275,6 +1276,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SMABLE/BLEAPI",
 				);
+				MARKETING_VERSION = 1.41;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1357,6 +1359,7 @@
 				CODE_SIGN_ENTITLEMENTS = smarthelper.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3KG66MUG6F;
 				ENABLE_BITCODE = NO;
@@ -1374,6 +1377,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SMABLE/BLEAPI",
 				);
+				MARKETING_VERSION = 1.41;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

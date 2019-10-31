@@ -88,6 +88,12 @@ static SmaBLE *_instace;
 //处理非应答数据
 - (void)handleResponseValue:(CBCharacteristic *)characteristic{
     Byte *testByte = (Byte *)[characteristic.value bytes];
+    
+    if(testByte==nil)
+    {
+        return;
+    }
+    
     NSLog(@"handleResponseValue ==%d",testByte[0]);
     int len=(int)characteristic.value.length;
     if([SmaBusinessTool checkNckBytes:testByte])//非应答信号
@@ -106,7 +112,7 @@ static SmaBLE *_instace;
                 binNum++;
             }
             else if (testByte[0] == 0x06  && binNum !=0){
-                NSLog(@"handleResponseValue 0x06 ==%d",testByte[0]);
+                //NSLog(@"handleResponseValue 0x06 ==%d",testByte[0]);
                 if (self.BinArr.count == binNum && numbend == NO) {
                     //结束下载表盘
                     numbend = YES;
@@ -351,19 +357,25 @@ static SmaBLE *_instace;
         NSString* text = [[NSString alloc] initWithFormat:@"%d%%", bytes[13]];
         array = [NSMutableArray arrayWithObjects:text, nil];
         
-        self.battery = [text stringByReplacingOccurrencesOfString:@"%"
+        NSString *battery = [text stringByReplacingOccurrencesOfString:@"%"
                                                        withString:@""];
         
-        if([self.battery length] > 0)
-        {
-            [self.delegate_swift battery:self.battery];
-        }
+        //if([self.battery])
+        //{
+            [self.delegate_swift battery:battery];
+        //}
     }
     else if (bytes[8]==0x02 && bytes[10]==0x0D && bol) {
         mode = MAC;
         NSString *macStr = [[[[NSData dataWithBytes:bytes length:len] description] stringByTrimmingCharactersInSet:[NSCharacterSet characterSetWithCharactersInString:@"<>"]] stringByReplacingOccurrencesOfString:@" " withString:@""];
         if (macStr.length == 38) {
             NSString *version = [NSString stringWithFormat:@"%@:%@:%@:%@:%@:%@",[[macStr substringWithRange:NSMakeRange(26, 2)] uppercaseString],[[macStr substringWithRange:NSMakeRange(28, 2)] uppercaseString],[[macStr substringWithRange:NSMakeRange(30, 2)] uppercaseString],[[macStr substringWithRange:NSMakeRange(32, 2)] uppercaseString],[[macStr substringWithRange:NSMakeRange(34, 2)] uppercaseString],[[macStr substringWithRange:NSMakeRange(36, 2)] uppercaseString]];
+            array =[NSMutableArray arrayWithObjects:version, nil];
+            NSLog(@"MAC:%@",version);
+            NSLog(@"NAME:%@",[SmaBleMgr.peripheral name]);
+            [self.delegate_swift getDeviceNameAndAddress:version];
+        }else if (macStr.length == 58) {
+            NSString *version = [NSString stringWithFormat:@"%@:%@:%@:%@:%@:%@",[[macStr substringWithRange:NSMakeRange(45, 2)] uppercaseString],[[macStr substringWithRange:NSMakeRange(47, 2)] uppercaseString],[[macStr substringWithRange:NSMakeRange(49, 2)] uppercaseString],[[macStr substringWithRange:NSMakeRange(51, 2)] uppercaseString],[[macStr substringWithRange:NSMakeRange(53, 2)] uppercaseString],[[macStr substringWithRange:NSMakeRange(55, 2)] uppercaseString]];
             array =[NSMutableArray arrayWithObjects:version, nil];
             NSLog(@"MAC:%@",version);
             NSLog(@"NAME:%@",[SmaBleMgr.peripheral name]);

@@ -1200,6 +1200,7 @@ class MainWebVC: UIViewController,WKUIDelegate, WKNavigationDelegate, WKScriptMe
     @objc(getDeviceNameAndAddress:)
     func getDeviceNameAndAddress(_ mac:NSString)
     {
+        print("asdf")
         let mem_no = self.common.getUD("mem_no") ?? "0"
         
         let parameters = [
