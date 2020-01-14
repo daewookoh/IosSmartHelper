@@ -14,6 +14,7 @@
 @protocol SMAFotaApiDelegate <NSObject>
 
 @optional
+- (void)registerDeviceVersion:(NSString *)version;
 /**
  * When the user device registers successfully, the device ID and key are returned.
  */

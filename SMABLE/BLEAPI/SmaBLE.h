@@ -149,6 +149,7 @@ typedef enum {
 @property (nonatomic, assign) BOOL isUPDateSwitch;
 @property (nonatomic, assign) BOOL isUPDateFont;
 @property (nonatomic,strong)AVAudioPlayer *player;
+@property (nonatomic, assign) BOOL isOTAing;
 + (instancetype)sharedCoreBlue; //创建对象
 
 /*处理设备反馈数据

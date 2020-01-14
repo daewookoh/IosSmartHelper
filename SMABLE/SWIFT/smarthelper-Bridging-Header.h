@@ -17,5 +17,6 @@
 #import "SmaAlarmInfo.h"
 #import "SMARightScreenInfo.h"
 #import "AFNetRequestManager.h"
+#import "FirmwareViewController.h"
 
 #import "FMDB.h"

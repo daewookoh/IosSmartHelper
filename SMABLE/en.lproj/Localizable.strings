@@ -5,10 +5,14 @@
  Created byShenzhen smart care technology limited on 2016/12/26.
  Copyright © 2016年 SMA BLE. All rights reserved.
  */
-"connecting" = "기기연결중";
-"connect_failed" = "기기연결 실패";
-"connect_succ" = "기기연결 성공";
-"connect_out" = "기기연결 시간초과";
+"connection_canceled" = "Connection Canceled";
+"device_disconnected" = "Device Disconnected";
+"device_not_connected" = "Device Not Connected";
+"update_new_data" = "Updating New Data";
+"connecting" = "connecting";
+"connect_failed" = "connect failed";
+"connect_succ" = "connect success";
+"connect_out" = "connect timeout";
 "slide_down" = "slide down to refresh";
 "loosen_insta" = "Loosen refreshed instantly";
 "refresh" = "refreshing";
@@ -127,3 +131,14 @@
 "pushmessage" = "Push the message";
 "M1_FOTA" = "M1 FOTA";
 "sync_Weather" = "Sync Weather";
+"not_enough_device_info" = "Not enough device info";
+"firmware_update" = "Firmware Update";
+"setting_dfu_newest" = "This is the latest version";
+"Check updateInfo" = "Check updateInfo";
+"GetVersion..." = "GetVersion...";
+"Cancel" = "Cancel";
+"DownLoading" = "DownLoading";
+"firmware_download_complete" = "Firmware Download Complete\nPlease Wait Until Device Update";
+"Home" = "Home";
+"no version update" = "No version to update";
+"Finish App" = "Finish App";

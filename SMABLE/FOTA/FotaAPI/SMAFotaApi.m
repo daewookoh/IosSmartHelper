@@ -37,11 +37,16 @@
     [[NSUserDefaults standardUserDefaults] setObject:productSecret forKey:PRODUCTSECRET];
     [[NSUserDefaults standardUserDefaults] setObject:version forKey:VERSION];
     
+    NSLog(@"userInfo %@", userInfo);
+    
     [FotaAFNetRequestManager FotapostWithURL:url parameters:userInfo success:^(id responseObject) {
+        
+        NSLog(@"responseObject %@", responseObject);
    
         NSInteger code = [responseObject[@"status"] integerValue];
         if (code == 1000) {
              NSDictionary *data = responseObject[@"data"];
+            [self.fotaDelegate registerDeviceVersion:userInfo[@"version"]];
             [self.fotaDelegate registerDeviceSuccess:data];
         }else {
             [self.fotaDelegate registerDeviceFail:responseObject];
@@ -68,6 +73,9 @@
     [FotaAFNetRequestManager FotapostWithURL:url parameters:deviceInfo success:^(id responseObject) {
   
         NSDictionary *responseDic = (NSDictionary *)responseObject;
+        
+        NSLog(@"responseDic %@", responseDic);
+        
         if ([responseDic[@"status"] isEqual:@1000]) {
             // Store version response information
             [self.fotaDelegate versionResponse:[self saveVersionInfo:responseObject]];
@@ -142,6 +150,8 @@
 
 #pragma mark - Method of obtaining a network environment
 - (NSString *)networktype{
+    return @"无服务";
+    /*
     NSArray *subviews = [[[[UIApplication sharedApplication] valueForKey:@"statusBar"] valueForKey:@"foregroundView"]subviews];
     NSNumber *dataNetworkItemView = nil;
     
@@ -176,6 +186,7 @@
             break;
     }
     return @"";
+     */
 }
 - (void)deletePackageWithVersionName{
     [FotaDownloadFIle deleteDestinateFile:self.versionname];

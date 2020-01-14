@@ -87,6 +87,11 @@ static SmaBLE *_instace;
 
 //处理非应答数据
 - (void)handleResponseValue:(CBCharacteristic *)characteristic{
+    
+    if (!characteristic || self.isOTAing || characteristic.value == nil) {
+        return;
+    }
+    
     Byte *testByte = (Byte *)[characteristic.value bytes];
     
     if(testByte==nil)
@@ -3655,7 +3660,7 @@ static NSMutableArray *swimInfos;
             }
             self.sendBLTimer = [NSTimer scheduledTimerWithTimeInterval:8.0 target:self selector:@selector(sendTimeOut) userInfo:nil repeats:NO];
             self.canSend = NO;
-            if (self.p && self.Write) {
+            if (self.p && self.Write && !self.isOTAing) {
                 NSMutableArray *sendArr = [self.BLInstructionArr firstObject];
                 if (sendArr.count > 1) {
                     for (int i = 0; i < sendArr.count - 1; i++) {

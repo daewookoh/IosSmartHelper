@@ -5,10 +5,14 @@
  Created byShenzhen smart care technology limited on 2016/12/26.
  Copyright © 2016年 SMA BLE. All rights reserved.
  */
-"connecting" = "연결중";
-"connect_failed" = "연결실패";
-"connect_succ" = "연결성공";
-"connect_out" = "연결시간 초과";
+"connection_canceled" = "기기연결 취소";
+"device_disconnected" = "기기연결 끊김";
+"device_not_connected" = "기기연결이 안되어 있습니다";
+"update_new_data" = "신규데이터 업데이트 중";
+"connecting" = "기기연결중";
+"connect_failed" = "기기연결 실패";
+"connect_succ" = "기기연결 성공";
+"connect_out" = "기기연결 시간초과";
 "slide_down" = "slide down to refresh";
 "loosen_insta" = "Loosen refreshed instantly";
 "refresh" = "refreshing";
@@ -112,3 +116,16 @@
 "cycling" = "Bike Riding data";
 "M1_FOTA" = "M1 FOTA";
 "sync_Weather" = "Sync Weather";
+"not_enough_device_info" = "기기 데이터 부족";
+"firmware_update" = "펌웨어 업데이트";
+"setting_dfu_newest" = "현재 최신 버젼입니다";
+"Check updateInfo" = "업데이트 정보확인";
+"GetVersion..." = "버젼정보 확인중...";
+"Cancel" = "취소";
+"DownLoading" = "다운로딩중...";
+"firmware_download_complete" = "[펌웨어 다운로드 완료]\n기기에서 업데이트를 진행합니다\n소요시간 : 4~5분\n\n기기 업데이트 완료후\n1.앱에서 기기해제 후 기기연결\n\n연결이 정상적으로 안될경우\n2.워치 블루투스 스위치 껐다켜기\n(메인화면 아래방향으로 스와이프)\n3.1번 과정 재시도";
+//"firmware_download_complete" = "[펌웨어 다운로드 완료]\n기기에서 업데이트를 진행합니다\n소요시간 : 4~5분\n\n기기 업데이트 완료후\n1.앱에서 기기->기기해제\n(아이폰설정->블루투스지우기 동시진행)\n2.앱에서 기기연결\n\n연결이 정상적으로 안될경우\n3.워치 블루투스 스위치 껐다켜기\n(메인화면 아래방향으로 스와이프)\n4.위 과정 재시도";
+//"firmware_download_complete" = "[펌웨어 다운로드 완료]\n기기에서 업데이트를 진행합니다\n소요시간 : 4~5분\n\n기기 업데이트 완료시\n앱 강제종료 후 재실행";
+"Home" = "메인화면으로";
+"no version update" = "업데이트할 버젼이 없습니다\n앱 강제종료후 다시 실행해 주세요";
+"Finish App" = "앱 종료";

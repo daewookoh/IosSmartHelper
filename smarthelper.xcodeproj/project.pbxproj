@@ -51,6 +51,8 @@
 		A5A1DD0722E94B4900EF3544 /* KakaoLink.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A1DD0322E94B4800EF3544 /* KakaoLink.framework */; };
 		A5A1DD0822E94B4900EF3544 /* KakaoMessageTemplate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A1DD0422E94B4900EF3544 /* KakaoMessageTemplate.framework */; };
 		A5A20357230A82BE00482AF2 /* ring.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = A5A1DD0922E94BD800EF3544 /* ring.mp3 */; };
+		A5C25B3023C5B741007D950E /* FirmwareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5C25B2D23C5B741007D950E /* FirmwareViewController.m */; };
+		A5C25B3123C5B741007D950E /* FirmwareViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5C25B2E23C5B741007D950E /* FirmwareViewController.xib */; };
 		A5EF478F22E96CBA00D60E29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5EF478E22E96CBA00D60E29 /* Assets.xcassets */; };
 		A5EF479122E9A08B00D60E29 /* Adlib.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EF479022E9A08B00D60E29 /* Adlib.framework */; };
 		BE6FF38FC434FFA65C64FD01 /* SMARightScreenInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = BE6FF7916DBE6F50092A5016 /* SMARightScreenInfo.m */; };
@@ -237,6 +239,9 @@
 		A5A1DD0322E94B4800EF3544 /* KakaoLink.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoLink.framework; sourceTree = "<group>"; };
 		A5A1DD0422E94B4900EF3544 /* KakaoMessageTemplate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = KakaoMessageTemplate.framework; sourceTree = "<group>"; };
 		A5A1DD0922E94BD800EF3544 /* ring.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ring.mp3; sourceTree = SOURCE_ROOT; };
+		A5C25B2D23C5B741007D950E /* FirmwareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirmwareViewController.m; sourceTree = "<group>"; };
+		A5C25B2E23C5B741007D950E /* FirmwareViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FirmwareViewController.xib; sourceTree = "<group>"; };
+		A5C25B2F23C5B741007D950E /* FirmwareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirmwareViewController.h; sourceTree = "<group>"; };
 		A5EF478E22E96CBA00D60E29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A5EF479022E9A08B00D60E29 /* Adlib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Adlib.framework; sourceTree = "<group>"; };
 		BE6FF7916DBE6F50092A5016 /* SMARightScreenInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMARightScreenInfo.m; sourceTree = "<group>"; };
@@ -526,6 +531,9 @@
 				EE09723A1E10F62100AC86A4 /* AppDelegate.m */,
 				EE09723C1E10F62100AC86A4 /* ViewController.h */,
 				EE09723D1E10F62100AC86A4 /* ViewController.m */,
+				A5C25B2F23C5B741007D950E /* FirmwareViewController.h */,
+				A5C25B2D23C5B741007D950E /* FirmwareViewController.m */,
+				A5C25B2E23C5B741007D950E /* FirmwareViewController.xib */,
 				EE09728F1E111AF100AC86A4 /* SMADeviceTableViewController.h */,
 				EE0972901E111AF100AC86A4 /* SMADeviceTableViewController.m */,
 				EE0972911E111AF100AC86A4 /* SMADeviceTableViewController.xib */,
@@ -940,6 +948,7 @@
 				EEA035721EA4966B006455EC /* DFUTest.zip in Resources */,
 				EEBE4FBA1FC50EFB00129C40 /* SMACustomViewController.xib in Resources */,
 				EE0972A01E113A6000AC86A4 /* SMASharingViewController.xib in Resources */,
+				A5C25B3123C5B741007D950E /* FirmwareViewController.xib in Resources */,
 				EEB6D0271E56D03B00931F30 /* SMAPointerWatchViewController.xib in Resources */,
 				EEDD3C7B1F30503100FFF72E /* SMAMTKViewController.xib in Resources */,
 				A5A1DCF822E94A9600EF3544 /* GoogleService-Info.plist in Resources */,
@@ -1087,6 +1096,7 @@
 				A5A1DCFD22E94A9600EF3544 /* ViewController.swift in Sources */,
 				1512120122E5A66300636906 /* FotaASICloudFilesObject.m in Sources */,
 				A5A1DCFB22E94A9600EF3544 /* ErrorVC.swift in Sources */,
+				A5C25B3023C5B741007D950E /* FirmwareViewController.m in Sources */,
 				EECE7A661E1237C400183E9F /* SMASecondSeriesCoachViewController.m in Sources */,
 				EEB465EB2101CC6C00338881 /* SmaHRHisInfo.m in Sources */,
 				1512120322E5A66300636906 /* FotaASICloudFilesContainerRequest.m in Sources */,
@@ -1258,7 +1268,7 @@
 				CODE_SIGN_ENTITLEMENTS = smarthelper.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 24;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3KG66MUG6F;
 				ENABLE_BITCODE = NO;
@@ -1276,7 +1286,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SMABLE/BLEAPI",
 				);
-				MARKETING_VERSION = 1.41;
+				MARKETING_VERSION = 1.51;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -1359,7 +1369,7 @@
 				CODE_SIGN_ENTITLEMENTS = smarthelper.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
+				CURRENT_PROJECT_VERSION = 24;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 3KG66MUG6F;
 				ENABLE_BITCODE = NO;
@@ -1377,7 +1387,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/SMABLE/BLEAPI",
 				);
-				MARKETING_VERSION = 1.41;
+				MARKETING_VERSION = 1.51;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

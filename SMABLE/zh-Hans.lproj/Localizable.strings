@@ -1,10 +1,14 @@
-/* 
+/*
   Localizable.strings
   SMABLE
 
   Created by 有限公司 深圳市 on 2016/12/26.
   Copyright © 2016年 SMA BLE. All rights reserved.
 */
+"connection_canceled" = "Connection Canceled";
+"device_disconnected" = "Device Disconnected";
+"device_not_connected" = "Device Not Connected";
+"update_new_data" = "Updating New Data";
 "connecting" = "正在连接设备。。。";
 "connect_failed" = "连接失败";
 "connect_succ" = "连接成功";
@@ -127,3 +131,14 @@
 "pushmessage" = "消息推送";
 "M1_FOTA" = "M1 FOTA";
 "sync_Weather" = "同步天气";
+"not_enough_device_info" = "Not enough device info";
+"firmware_update" = "Firmware Update";
+"setting_dfu_newest" = "This is the latest version";
+"Check updateInfo" = "Check updateInfo";
+"GetVersion..." = "GetVersion...";
+"Cancel" = "Cancel";
+"DownLoading" = "DownLoading";
+"firmware_download_complete" = "Firmware Download Complete\nPlease Wait Until Device Update";
+"Home" = "Home";
+"no version update" = "No version to update";
+"Finish App" = "Finish App";

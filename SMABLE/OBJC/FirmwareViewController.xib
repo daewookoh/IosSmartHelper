@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SMASharingViewController">
+            <connections>
+                <outlet property="OTABut" destination="v2y-zE-r03" id="V7o-7c-atj"/>
+                <outlet property="cleanBut" destination="aXf-HE-IjR" id="Pjr-wj-39j"/>
+                <outlet property="logTextView" destination="azg-tb-b63" id="7mB-hL-4FL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="azg-tb-b63">
+                    <rect key="frame" x="10" y="100" width="355" height="427"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v2y-zE-r03">
+                    <rect key="frame" x="5" y="537" width="365" height="50"/>
+                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="lpT-1H-QUP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="OTABut">
+                        <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </state>
+                    <connections>
+                        <action selector="setOTAselector:" destination="-1" eventType="touchUpInside" id="OJL-Tv-L6J"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aXf-HE-IjR">
+                    <rect key="frame" x="5" y="597" width="365" height="50"/>
+                    <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Srn-6O-KrT"/>
+                        <constraint firstAttribute="height" constant="50" id="jNb-dc-6r2"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <state key="normal" title="Clean But">
+                        <color key="titleColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                    </state>
+                    <connections>
+                        <action selector="CleanSelector:" destination="-1" eventType="touchUpInside" id="jZj-jb-xNK"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="aXf-HE-IjR" firstAttribute="top" secondItem="v2y-zE-r03" secondAttribute="bottom" constant="10" id="6yp-cJ-VxL"/>
+                <constraint firstAttribute="trailing" secondItem="aXf-HE-IjR" secondAttribute="trailing" constant="5" id="Ln9-IW-BHX"/>
+                <constraint firstItem="v2y-zE-r03" firstAttribute="top" secondItem="azg-tb-b63" secondAttribute="bottom" constant="10" id="PaS-Tp-ZbF"/>
+                <constraint firstItem="azg-tb-b63" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="100" id="W5N-9Y-rzb"/>
+                <constraint firstItem="azg-tb-b63" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="bVF-MC-zaZ"/>
+                <constraint firstAttribute="bottom" secondItem="aXf-HE-IjR" secondAttribute="bottom" constant="20" id="rUG-uM-Ejn"/>
+                <constraint firstItem="aXf-HE-IjR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="rfb-6E-Jhn"/>
+                <constraint firstItem="v2y-zE-r03" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="rwe-HE-t4J"/>
+                <constraint firstAttribute="trailing" secondItem="azg-tb-b63" secondAttribute="trailing" constant="10" id="xjV-PB-sTk"/>
+                <constraint firstAttribute="bottom" secondItem="aXf-HE-IjR" secondAttribute="bottom" constant="20" id="yZ4-kK-bRP"/>
+                <constraint firstAttribute="trailing" secondItem="v2y-zE-r03" secondAttribute="trailing" constant="5" id="ynq-2Z-Ecu"/>
+            </constraints>
+            <point key="canvasLocation" x="16.800000000000001" y="14.842578710644679"/>
+        </view>
+    </objects>
+</document>

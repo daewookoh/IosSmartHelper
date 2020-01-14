@@ -10,6 +10,8 @@
 #import <CoreBluetooth/CoreBluetooth.h>
 #import "ScannedPeripheral.h"
 #import "DfuUpdate.h"
+#import "DeviceInfo.h"
+
 @protocol BLConnectDelegate <NSObject>
 @optional
 - (void)reloadView;
@@ -38,6 +40,8 @@
 @property (strong, nonatomic) NSArray *scanNameArr;
 @property (strong, nonatomic) NSTimer *scanTimer;
 @property (strong, nonatomic) DfuUpdate *dfuUpdate;
+@property (nonatomic,strong) DeviceInfo *device_info;
+@property (nonatomic,strong)  CBService *ota_write_service;
 /*设备写的特性*/
 @property (nonatomic,strong) CBCharacteristic *characteristicWrite;
 /*设备读的特性*/

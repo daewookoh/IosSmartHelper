@@ -336,6 +336,7 @@ class MainWebVC: UIViewController,WKUIDelegate, WKNavigationDelegate, WKScriptMe
         Sma.delegate_swift = self as SmaCoreBlueToolDelegate
         BLC.delegate_swift = self as BLConnectDelegate
         
+        
         let is_connected = common.getUD("is_connected") ?? ""
         if(is_connected=="true")
         {
@@ -537,7 +538,7 @@ class MainWebVC: UIViewController,WKUIDelegate, WKNavigationDelegate, WKScriptMe
         
         if(update_data_status.isEmpty && flag==true)
         {
-            showToast(message: "신규 데이터 업데이트 중")
+            showToast(message: "update_new_data".localized)
             let seconds = 2.5
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                 self.webView.reload()
@@ -640,7 +641,7 @@ class MainWebVC: UIViewController,WKUIDelegate, WKNavigationDelegate, WKScriptMe
         
         if(update_data_status.isEmpty && flag==true)
         {
-            showToast(message: "신규 데이터 업데이트 중")
+            showToast(message: "update_new_data".localized)
             let seconds = 2.5
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                 self.webView.reload()
@@ -733,7 +734,7 @@ class MainWebVC: UIViewController,WKUIDelegate, WKNavigationDelegate, WKScriptMe
         
         if(update_data_status.isEmpty && flag==true)
         {
-            showToast(message: "신규 데이터 업데이트 중")
+            showToast(message: "update_new_data".localized)
             let seconds = 2.5
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                 self.webView.reload()
@@ -824,7 +825,7 @@ class MainWebVC: UIViewController,WKUIDelegate, WKNavigationDelegate, WKScriptMe
         
         if(update_data_status.isEmpty && flag==true)
         {
-            showToast(message: "신규 데이터 업데이트 중")
+            showToast(message: "update_new_data".localized)
             let seconds = 2.5
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                 self.webView.reload()
@@ -917,7 +918,7 @@ class MainWebVC: UIViewController,WKUIDelegate, WKNavigationDelegate, WKScriptMe
         
         if(update_data_status.isEmpty && flag==true)
         {
-            showToast(message: "신규 데이터 업데이트 중")
+            showToast(message: "update_new_data".localized)
             let seconds = 2.5
             DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                 self.webView.reload()
@@ -1218,14 +1219,14 @@ class MainWebVC: UIViewController,WKUIDelegate, WKNavigationDelegate, WKScriptMe
     @objc(disconnected)
     func disconnected()
     {
-        showToast(message : "기기 연결 끊김")
+        showToast(message : "device_disconnected".localized)
         doJavascript("reload()")
     }
     
     @objc(connectCancel)
     func connectCancel()
     {
-        showToast(message : "기기 연결 취소")
+        showToast(message : "connection_canceled".localized)
         unbind()
     }
     
@@ -1254,7 +1255,7 @@ class MainWebVC: UIViewController,WKUIDelegate, WKNavigationDelegate, WKScriptMe
     @objc(connected)
     func connected()
     {
-        showToast(message : "기기 연결 성공");
+        showToast(message : "connect_succ".localized);
         doJavascript("reload()")
     }
  
@@ -1527,6 +1528,14 @@ class MainWebVC: UIViewController,WKUIDelegate, WKNavigationDelegate, WKScriptMe
         self.dismiss(animated: false, completion: nil)
     }
     
+    func moveToFirmwareView(){
+        //OBJC 화면으로 이동
+        self.navigationController?.pushViewController(FirmwareViewController(nibName: "FirmwareViewController", bundle: nil), animated: true)
+        //self.navigationController?.pushViewController(SMASharingViewController(nibName: "SMASharingViewController", bundle: nil), animated: true)
+        
+        
+    }
+    
     // 네이버 로그인 시작
     // 로그인전
     // 로그인 토큰이 없는 경우, 로그인 화면을 오픈한다.
@@ -1649,7 +1658,7 @@ extension MainWebVC  {
                 frontAd.load(request)
             }
             else if(cur_url.hasSuffix("index2.php"))
-            {   
+            {
                 frontAd = GADInterstitial(adUnitID: common.admob_front_ad)
                 frontAd.delegate = self
                 let request = GADRequest()
@@ -1785,7 +1794,7 @@ extension MainWebVC  {
         // 최종 업데이트후 1시간이 지난 경우만 업데이트
         if(!update_data_status.isEmpty && cur_date.timeIntervalSince(last_data_date) < 10)
         {
-            showToast(message : "데이터 업데이트 진행중")
+            //showToast(message : "데이터 업데이트 진행중")
             return;
         }
         else if(cur_date.timeIntervalSince(last_data_date) < 10)
@@ -1942,7 +1951,7 @@ extension MainWebVC  {
                             UserDefaults.standard.set(1, forKey: "SMS")
                         }else {
                             SmaBleSend?.setSmspark(false);
-                            UserDefaults.standard.set(1, forKey: "SMS")
+                            UserDefaults.standard.set(0, forKey: "SMS")
                         }
                         
                     }
@@ -1972,7 +1981,7 @@ extension MainWebVC  {
                     }
                     else if(m[1] == "GESTURE")
                     {
-                        if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                        if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                         
                         let info = SMARightScreenInfo()
                         
@@ -1985,7 +1994,7 @@ extension MainWebVC  {
                     }
                     else if(m[1] == "USER")
                     {
-                        if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                        if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                         
                         let gender = Int32(m[2]) ?? 1
                         let age = Int32(m[3]) ?? 20
@@ -1998,7 +2007,7 @@ extension MainWebVC  {
                     }
                     else if(m[1] == "SIT")
                     {
-                        if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                        if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                         
                         let info = SmaSeatInfo()
                         
@@ -2029,7 +2038,7 @@ extension MainWebVC  {
                     }
                     else if(m[1] == "HEART")
                     {
-                        if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                        if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                         
                         let info = SmaHRHisInfo()
                         
@@ -2046,7 +2055,7 @@ extension MainWebVC  {
                     }
                     else if(m[1] == "ALARM")
                     {
-                        if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                        if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                         
                         var alarmArr : NSMutableArray = []
                         let alarm_count = Int(m[42]) ?? 0
@@ -2301,50 +2310,56 @@ extension MainWebVC  {
                 else if message == "GET_ALARM" {
                     SmaBleSend?.getCuffCalarmClockList()
                 }
+                else if message == "FIRMWARE_UPDATE" {
+                    
+                    if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
+                
+                    moveToFirmwareView()
+                }
                 else if message == "LOGOUT" {
                     common.setUD("mem_no","0")
                 }
                 else if message == "BATTERY" {
-                    if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                    if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                     SmaBleSend?.getElectric()
                 }
                 else if message == "PHONE_ON" {
-                    if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                    if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                     SmaBleSend?.setphonespark(true);
                     UserDefaults.standard.set(1, forKey: "PHONE")
                 }
                 else if message == "PHONE_OFF" {
-                    if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                    if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                     SmaBleSend?.setphonespark(false);
                     UserDefaults.standard.set(0, forKey: "PHONE")
                 }
                 else if message == "MESSAGE_ON" {
-                    if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                    if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                     SmaBleSend?.setSmspark(true);
                     UserDefaults.standard.set(1, forKey: "SMS")
                 }
                 else if message == "MESSAGE_OFF" {
-                    if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                    if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                     SmaBleSend?.setSmspark(false);
                     UserDefaults.standard.set(0, forKey: "SMS")
                 }
                 else if message == "LOST_ON" {
-                    if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                    if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                     SmaBleSend?.setDefendLose(true);
                     UserDefaults.standard.set(1, forKey: "DefendLose")
                     //[SmaUserDefaults setInteger:swit.on forKey:@"DefendLose"];
                 }
                 else if message == "LOST_OFF" {
-                    if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                    if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                     SmaBleSend?.setDefendLose(false);
                     UserDefaults.standard.set(0, forKey: "DefendLose")
                 }
                 else if message == "FIND_DEVICE" {
-                    if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                    if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                     SmaBleSend?.requestFindDevice(withBuzzing: 1)
                 }
                 else if message == "CAMERA" {
-                    if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                    if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                     
                     picker.sourceType = .camera
                     
@@ -2372,7 +2387,7 @@ extension MainWebVC  {
                     SmaBleSend?.setSystemTime()
                 }
                 else if message == "SET_WEATHER" {
-                    if(con != "true") {showToast(message : "기기연결이 안되어 있습니다"); self.disconnected(); return}
+                    if(con != "true") {showToast(message : "device_not_connected".localized); self.disconnected(); return}
                     
                     setWeather()
                 }
@@ -2604,15 +2619,25 @@ extension MainWebVC  {
     //Adlib
     func alInterstitialAd(_ interstitialAd: ALInterstitialAd!, didClickedAdAt platform: ALMEDIATION_PLATFORM) {
         print("alInterstitialAd-didClickedAdAt")
-        if(common.getUD("ADLIB_TYPE")=="REWARD")
-        {
-            print("rewardComplete")
-            doJavascript("rewardComplete()")
+        rewardComplete()
+    }
+
+    func alInterstitialAd(_ interstitialAd: ALInterstitialAd!, didReceivedAdAt platform: ALMEDIATION_PLATFORM) {
+        print("alInterstitialAd-didReceivedAdAt")
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 10) {
+            self.rewardComplete()
         }
     }
     
-    func alInterstitialAd(_ interstitialAd: ALInterstitialAd!, didReceivedAdAt platform: ALMEDIATION_PLATFORM) {
-        print("alInterstitialAd-didReceivedAdAt")
+    func rewardComplete()
+    {
+        print("rewardComplete")
+        if(common.getUD("ADLIB_TYPE")=="REWARD")
+        {
+           common.setUD("ADLIB_TYPE", "NONE");
+            webView.evaluateJavaScript("rewardComplete()", completionHandler:nil)
+        }
     }
     
     func alInterstitialAd(_ interstitialAd: ALInterstitialAd!, didFailedAdAt platform: ALMEDIATION_PLATFORM) {
@@ -2816,6 +2841,10 @@ extension MainWebVC {
 
 
 extension String {
+     var localized: String {
+        return NSLocalizedString(self, tableName: "Localizable", value: self, comment: "")
+    }
+
     subscript (i: Int) -> Character {
         return self[index(startIndex, offsetBy: i)]
     }

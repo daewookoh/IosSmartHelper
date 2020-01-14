@@ -7,6 +7,9 @@
 @synthesize peripherals;
 static id _instace;
 
+#define Characteristics_UUID_ONLY_READ @"C6A22916-F821-18BF-9704-0266F20E80FD"
+#define SERVICE_UUID_ONLY_WRITE @"C6A2B98B-F821-18BF-9704-0266F20E80FD"
+
 + (id)allocWithZone:(struct _NSZone *)zone
 {
     static dispatch_once_t onceToken;
@@ -23,6 +26,15 @@ static id _instace;
         _instace = [[self alloc] init];
     });
     return _instace;
+}
+
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        _device_info = [[DeviceInfo alloc] init];
+    }
+    return self;
 }
 
 - (id)copyWithZone:(NSZone *)zone
@@ -164,6 +176,11 @@ static NSUInteger serviceNum;
     for (int i=0; i < peripheral.services.count; i++) {
         CBService *s = [peripheral.services objectAtIndex:i];
         [peripheral discoverCharacteristics:nil forService:s];
+        if( [[s.UUID UUIDString] isEqualToString:SERVICE_UUID_ONLY_WRITE]){
+            self.ota_write_service = s;
+            //[peripheral discoverCharacteristics:nil forService:s];
+            
+        }
     }
 }
 
@@ -190,6 +207,13 @@ static NSUInteger serviceNum;
             _characteristicWeChat = characteristic;
             [self readWeChatData:_characteristicWeChat];
         }
+        else if ([[characteristic.UUID UUIDString] isEqualToString:Characteristics_UUID_ONLY_READ]) {
+            NSString *value = [[NSString alloc]initWithData:characteristic.value encoding:NSUTF8StringEncoding];
+            NSLog(@"123获取手表的固件信息？？？？value = %@",value);
+            [self.device_info initWithString:value];
+            [peripheral readValueForCharacteristic:characteristic];
+        }
+        
         [self.characteristics addObject:characteristic.UUID.UUIDString];
     }
     
